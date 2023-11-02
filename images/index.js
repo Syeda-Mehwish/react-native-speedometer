@@ -1,5 +1,5 @@
 import * as React from "react";
-import Dial from "./Dial.svg";
+import Dial from "./Dial.js";
 
 const icons = {
   Dial,
