@@ -79,8 +79,7 @@
     "react-native": "^0.57.1"
   },
   "dependencies": {
-    "prop-types": "^15.6.2",
-    "react-native-svg": "^13.14.0"
+    "prop-types": "^15.6.2"
   },
   "jest": {
     "preset": "react-native",

@@ -11,7 +11,6 @@ import {
   Dimensions,
 } from "react-native";
 import PropTypes from "prop-types";
-import { Icon } from "../images";
 
 function calculateDegreeFromLabels(degree, labels) {
   const perLevelDegree = degree / labels.length;
@@ -209,7 +208,7 @@ class Speedometer extends Component {
               imageWrapperStyle,
             ]}
           >
-            <Icon name="Dial" width={32} height={35} />
+            {needleImage}
             {/* <Image
               style={[
                 style.image,
@@ -292,7 +291,7 @@ Speedometer.defaultProps = {
       activeBarColor: "#00ff6b",
     },
   ],
-  needleImage: require("../images/speedometer-needle.png"),
+  needleImage: {},
   wrapperStyle: {},
   outerCircleStyle: {},
   halfCircleStyle: {},
