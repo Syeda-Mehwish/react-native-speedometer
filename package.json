@@ -6,6 +6,7 @@
   "jsnext:main": "dist/react-native-speedometer.esm.js",
   "module": "dist/react-native-speedometer.esm.js",
   "scripts": {
+    "prepare": "npm run build",
     "prebuild": "rimraf dist",
     "prepublishOnly": "run-s build",
     "prepack": "run-s build",
