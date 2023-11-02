@@ -1,8 +1,10 @@
 /* eslint import/no-unresolved: [2, { ignore: ['react-native', 'react'] }] */
 /* eslint radix: ["error", "as-needed"] */
-import React, { Component } from "react";
-import { View, Image, Animated, Easing, Text } from "react-native";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import {
+  View, Image, Animated, Easing, Text,
+} from 'react-native';
+import PropTypes from 'prop-types';
 
 function calculateDegreeFromLabels(degree, labels) {
   const perLevelDegree = degree / labels.length;
@@ -19,7 +21,7 @@ function limitValue(value, minValue, maxValue, allowedDecimals) {
   if (!isNaN(value)) {
     if (!isNaN(allowedDecimals) && allowedDecimals > 0) {
       currentValue = parseFloat(value).toFixed(
-        allowedDecimals < 4 ? parseInt(allowedDecimals) : 4
+        allowedDecimals < 4 ? parseInt(allowedDecimals) : 4,
       );
     } else {
       currentValue = parseInt(value);
@@ -37,45 +39,45 @@ function validateSize(current, original) {
 }
 
 // Style
-const width = Dimensions.get("window").width;
+const width = Dimensions.get('window').width;
 const style = StyleSheet.create({
   wrapper: {
     marginVertical: 5,
-    alignSelf: "center",
+    alignSelf: 'center',
   },
   // Circular Container
   circleWrapper: {
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   outerCircle: {
-    justifyContent: "flex-end",
-    alignItems: "center",
-    overflow: "hidden",
-    borderColor: "#ffffff",
-    backgroundColor: "#e6e6e6",
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    overflow: 'hidden',
+    borderColor: '#ffffff',
+    backgroundColor: '#e6e6e6',
   },
   halfCircle: {
-    position: "absolute",
+    position: 'absolute',
     top: 0,
     left: 0,
     borderTopRightRadius: 0,
     borderBottomRightRadius: 0,
   },
   imageWrapper: {
-    position: "absolute",
+    position: 'absolute',
     left: 0,
     zIndex: 10,
   },
   image: {
-    resizeMode: "stretch",
+    resizeMode: 'stretch',
     height: width - 20,
     width: width - 20,
   },
   innerCircle: {
-    overflow: "hidden",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    backgroundColor: "#ffffff",
+    overflow: 'hidden',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
     width: width * 0.6,
     height: (width / 2) * 0.6,
     borderTopLeftRadius: width / 2 - 10,
@@ -83,15 +85,15 @@ const style = StyleSheet.create({
   },
   labelWrapper: {
     marginVertical: 5,
-    alignItems: "center",
+    alignItems: 'center',
   },
   label: {
     fontSize: 25,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   labelNote: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 });
 
@@ -129,7 +131,7 @@ class Speedometer extends Component {
       limitValue(value, minValue, maxValue, allowedDecimals),
       labels,
       minValue,
-      maxValue
+      maxValue,
     );
     Animated.timing(this.speedometerValue, {
       toValue: limitValue(value, minValue, maxValue, allowedDecimals),
@@ -140,7 +142,7 @@ class Speedometer extends Component {
 
     const rotate = this.speedometerValue.interpolate({
       inputRange: [minValue, maxValue],
-      outputRange: ["-90deg", "90deg"],
+      outputRange: ['-90deg', '90deg'],
     });
 
     const currentSize = validateSize(size, width - 20);
@@ -252,37 +254,37 @@ Speedometer.defaultProps = {
   allowedDecimals: 0,
   labels: [
     {
-      name: "Pathetically weak",
-      labelColor: "#ff2900",
-      activeBarColor: "#ff2900",
+      name: 'Pathetically weak',
+      labelColor: '#ff2900',
+      activeBarColor: '#ff2900',
     },
     {
-      name: "Very weak",
-      labelColor: "#ff5400",
-      activeBarColor: "#ff5400",
+      name: 'Very weak',
+      labelColor: '#ff5400',
+      activeBarColor: '#ff5400',
     },
     {
-      name: "So-so",
-      labelColor: "#f4ab44",
-      activeBarColor: "#f4ab44",
+      name: 'So-so',
+      labelColor: '#f4ab44',
+      activeBarColor: '#f4ab44',
     },
     {
-      name: "Fair",
-      labelColor: "#f2cf1f",
-      activeBarColor: "#f2cf1f",
+      name: 'Fair',
+      labelColor: '#f2cf1f',
+      activeBarColor: '#f2cf1f',
     },
     {
-      name: "Strong",
-      labelColor: "#14eb6e",
-      activeBarColor: "#14eb6e",
+      name: 'Strong',
+      labelColor: '#14eb6e',
+      activeBarColor: '#14eb6e',
     },
     {
-      name: "Unbelievably strong",
-      labelColor: "#00ff6b",
-      activeBarColor: "#00ff6b",
+      name: 'Unbelievably strong',
+      labelColor: '#00ff6b',
+      activeBarColor: '#00ff6b',
     },
   ],
-  needleImage: require("../images/speedometer-needle.png"),
+  needleImage: require('../images/speedometer-needle.png'),
   wrapperStyle: {},
   outerCircleStyle: {},
   halfCircleStyle: {},
