@@ -209,7 +209,7 @@ class Speedometer extends Component {
               imageWrapperStyle,
             ]}
           >
-            <Icon name="Dial" width={34} height={34} />
+            <Icon name="Dial" width={32} height={35} />
             {/* <Image
               style={[
                 style.image,
